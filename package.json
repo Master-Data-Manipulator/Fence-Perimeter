@@ -3,13 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.2"
+    "@mapbox/mapbox-gl-draw": "1.1.2",
+    "@mapbox/mapbox-gl-geocoder": "^4.7.2",
+    "@turf/length": "^6.5.0",
+    "@turf/turf": "^6.5.0",
+    "mapbox-gl": "1.1.1",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "react-mapbox-gl": "4.5.1",
+    "react-mapbox-gl-draw": "2.0.2",
+    "react-scripts": "3.0.1",
+    "turf": "^3.0.14"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -19,8 +23,7 @@
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "react-app"
     ]
   },
   "browserslist": {
