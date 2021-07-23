@@ -24,6 +24,7 @@ const Geo = new MapboxGeocoder({
 export default function App() {
   const [perimeter, setPerimeter] = React.useState(0);
   const [zoom, setZoom] = React.useState(10);
+  const [drawControlRef, setDrawControlRef] = React.useState(null);
 
   const onDrawCreate = ({ features }) => {
     setPerimeter(getDistance(features));
@@ -55,16 +56,26 @@ export default function App() {
         onStyleLoad={onMapLoad}
         style="mapbox://styles/mapbox/satellite-v9" // eslint-disable-line
         containerStyle={{
-          height: "600px",
-          width: "100vw",
+          position: "absolute",
+          top: 100,
+          right: 0,
+          bottom: 0,
+          left: 0,
         }}
       >
         <DrawControl
+          ref={(drawControl) => {
+            setDrawControlRef(drawControl);
+          }}
           displayControlsDefault={false}
           controls={{ line_string: true, trash: true }}
           onDrawCreate={onDrawCreate}
           onDrawUpdate={onDrawUpdate}
-        />
+          mode={"direct_select"}
+          position={"bottom-left"}
+        >
+          {console.log(drawControlRef?.draw)}
+        </DrawControl>
       </Map>
     </div>
   );
