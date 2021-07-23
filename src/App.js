@@ -72,7 +72,6 @@ export default function App() {
           onDrawCreate={onDrawCreate}
           onDrawUpdate={onDrawUpdate}
           mode={"direct_select"}
-          position={"bottom-left"}
         >
           {console.log(drawControlRef?.draw)}
         </DrawControl>
